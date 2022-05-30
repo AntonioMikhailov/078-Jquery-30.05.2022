@@ -1,29 +1,25 @@
-require('es6-promise').polyfill(); // синтаксис Common JS можно смешать с модулями
-import 'nodelist-foreach-polyfill';
+import $ from "jquery";
 
-import 'slick-carousel'; 
+//const btn = document.querySelector('#btn'); // вариант получения на JS
+let btn = $('#btn');
+console.log(btn); // jQuery.fn.init [button#btn.list-item]
+console.log($('#btn')); // или так
 
-
-import tabs from './modules/tabs';
-import modal from './modules/modal';
-import timer from './modules/timer';
-import cards from './modules/cards';
-import slider from './modules/slider';
-import forms from './modules/forms';
-window.addEventListener('DOMContentLoaded', ()=> {
-
-
-tabs();
-modal('[data-modal]', '.modal');
-timer();
-cards();
-slider( {
-  slide: '.offer__slide',
-  nextArrow: '.offer__slider-next',
-  prevArrow: '.offer__slider-prev',
-  totalCounter: '#total',
-  currentCounter: '#current',
+$(function(){ // вместо DOMContentLoaded
+  $('.list-item:first').hover(function() {
+    $(this).toggleClass('active');
 });
-forms();
+
+//находим третью кнопку и четные фото скрываем
+$('.list-item:eq(2)').on('click', function () { 
+  $('.image:even').animate({
+    opacity : 'toggle',
+    height: 'toggle',
+  }, 2000); // время анимации 
+});
+
 
 }); //конец loaded
+
+
+

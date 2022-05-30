@@ -6,58 +6,57 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <style>
-    /* .text {
-      width: 50px;
-      height: 50px;
-      background-color: #d2d2d2;
-      margin: 10px;
-      cursor: pointer;
-    } */
-    .active.text {
-      background-color: rgb(208, 118, 118);
-      color: rgb(233, 14, 14);
-      font-size: 26px;
-    }
-    form.active  {
-  background-color: rgb(138, 138, 138);
+.box {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background-color: blue;
+}
+.wrapper {
+  position: relative;
+  width: 400px;
+  height: 400px;
+  border: 3px solid red;
+}
+button {
+  margin-bottom: 10px;
+  margin-top: 10px;
+  width: 100px;
+  height: 40px;
+  background-color: yellow;
+  border: none;
 }
   </style>
 </head>
 <body>
-  <!-- <div class="text" data-text = '1'>мама</div>
-  <div class="text" data-text = '2'>папа</div> -->
- <!-- <form action="#">
-<input type="text" class="text">
-<input type="checkbox" class="checkbox" >
-<button>Отправить</button>
- </form>
- <button class="changeColor">changeColor</button>
- <div class="div" id="divID">один</div> -->
+
  <div class="wrapper">
    <div class="box">BOX</div>
-   <div class="text" id="text">Текст</div>
- </div>
-  <script>
-
-function checkAge(age) { // 3- Получил в параметр 20
-  if (age > 18) {// 4 - проверяем 20>18
-    console.log(age);
-  return true; // 5 - возврат true
-  } else {
-  return confirm('А родители разрешили?'); // на этом этапе если нажать ОК то вернется true, п если Отмена - false
-  }
-  }
-  let age = 10; // 1- Начало работы кода
-  // в IF - если меньше 20 получаем ответ от Confirm - ОК или Отмену
-  if ( checkAge(age) ) {   // 2 - получаем 20 в параметр и вызываем checkAge
-    console.log(age + 10); 
-   console.log('Доступ получен' );
-   // 6 - Доступ получен
-  } else {
-    console.log(age);
-    console.log('Доступ закрыт' );
   
-  }
+ 
+ </div>
+ <button class="btn">Кнопка</button>
+  <script>
+const btn = document.querySelector('.btn');
+// let timerId;
+
+function myAnimation() {
+  
+    const elem = document.querySelector('.box');
+    let pos = 0;
+
+    const id = setInterval(frame, 10);  // 10 милисекунд
+       function frame() {
+        if (pos == 300) { // 300 конечная позиция Box - правый нижний угол
+           clearInterval(id); 
+        } else {
+            pos++;
+            elem.style.top = pos + 'px'; // При каждом шаге анимации сдвигаем сверху от Top
+        }   elem.style.left = pos + 'px'; // При каждом шаге анимации сдвигаем влево от края
+    }
+}
+btn.addEventListener('click', myAnimation);
+
 
   </script>
 </body>
