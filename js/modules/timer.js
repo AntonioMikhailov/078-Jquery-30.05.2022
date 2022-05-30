@@ -61,4 +61,4 @@ function setClock(selector, endtime) {
 setClock('.timer', deadLine ); // deadline далее в параметрах как endtime везде
 }
 
-module.exports = timer;
+export default  timer;

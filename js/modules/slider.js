@@ -1,11 +1,11 @@
-function slider() { 
-  // Слайдер простой -061
 
-  const offerSlide = document.querySelectorAll('.offer__slide');
-  const sliderPrevBtn = document.querySelector('.offer__slider-prev');
-  const sliderNextBtn = document.querySelector('.offer__slider-next');
-  const currentNum = document.querySelector('#current');
-  const totalNum = document.querySelector('#total');
+  // Слайдер простой -061
+function slider({slide, prevArrow, nextArrow,  totalCounter, currentCounter}) { 
+const offerSlide = document.querySelectorAll(slide);
+  const sliderPrevBtn = document.querySelector(prevArrow);
+  const sliderNextBtn = document.querySelector(nextArrow);
+  const currentNum = document.querySelector(currentCounter);
+  const totalNum = document.querySelector(totalCounter);
   // Показываем первый слайд при загрузке
   let indexSlide = 1; // у Ивана =1
   // вариант 2 - Ивана
@@ -112,4 +112,4 @@ function slider() {
   // console.log(currentNum.innerHTML = '');
 }
 
-module.exports = slider;
+export default  slider;

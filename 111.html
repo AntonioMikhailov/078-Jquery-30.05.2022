@@ -38,16 +38,27 @@
    <div class="text" id="text">Текст</div>
  </div>
   <script>
-let obj = {
-  name: 'Ann',
-  surName: 'Ivanova',
- fullName: this.name,
 
-};
-console.log(obj.fullName); // Ann Ivanova – как свойство получаем
-// let res = obj.fullName();// Ann Ivanova
-// console.log(res);
-   
+function checkAge(age) { // 3- Получил в параметр 20
+  if (age > 18) {// 4 - проверяем 20>18
+    console.log(age);
+  return true; // 5 - возврат true
+  } else {
+  return confirm('А родители разрешили?'); // на этом этапе если нажать ОК то вернется true, п если Отмена - false
+  }
+  }
+  let age = 10; // 1- Начало работы кода
+  // в IF - если меньше 20 получаем ответ от Confirm - ОК или Отмену
+  if ( checkAge(age) ) {   // 2 - получаем 20 в параметр и вызываем checkAge
+    console.log(age + 10); 
+   console.log('Доступ получен' );
+   // 6 - Доступ получен
+  } else {
+    console.log(age);
+    console.log('Доступ закрыт' );
+  
+  }
+
   </script>
 </body>
 </html>

@@ -1,3 +1,6 @@
+import { openModal } from "./modal";
+import { closeModal } from "./modal";
+
 function forms() { 
  
 // Отправка Форм обратной связи через AJAX на локальный файл server.php
@@ -92,4 +95,4 @@ setTimeout(() => {
 }
 }
 
-module.exports = forms;
+export default  forms;

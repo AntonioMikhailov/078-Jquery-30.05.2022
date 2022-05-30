@@ -24,34 +24,19 @@
   ],
   "requests": [
     {
-      "name": "axa",
-      "phone": "3434",
+      "name": "Антон",
+      "phone": "44w3",
       "id": 1
     },
     {
-      "name": "",
-      "phone": "",
+      "name": "йы",
+      "phone": "ый",
       "id": 2
     },
     {
-      "name": "",
-      "phone": "",
-      "id": 3
-    },
-    {
-      "name": "фч",
-      "phone": "фч",
-      "id": 4
-    },
-    {
-      "name": "ss",
-      "phone": "3434",
-      "id": 5
-    },
-    {
-      "name": "Антон",
+      "name": "axa",
       "phone": "+7911 291 0063",
-      "id": 6
+      "id": 3
     }
   ]
 }

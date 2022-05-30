@@ -34,4 +34,4 @@ tabsParent.addEventListener('click', (e)=> {
  
 }
 
-module.exports = tabs;
+export default  tabs;

@@ -11,15 +11,29 @@
   },
   "author": "",
   "license": "ISC",
+  "browserslist": [
+    ">1%"
+  ],
   "bugs": {
     "url": "https://github.com/AntonioMikhailov/056-Fetch-API-11.05/issues"
   },
   "homepage": "https://github.com/AntonioMikhailov/056-Fetch-API-11.05#readme",
   "description": "",
   "dependencies": {
-    "json-server": "^0.17.0"
+    "@babel/polyfill": "^7.12.1",
+    "es6-promise": "^4.2.8",
+    "es6-promise-polyfill": "^1.2.0",
+    "json-server": "^0.17.0",
+    "nodelist-foreach-polyfill": "^1.2.0",
+    "slick-carousel": "^1.8.1"
   },
   "devDependencies": {
+    "@babel/cli": "^7.17.10",
+    "@babel/core": "^7.18.2",
+    "@babel/preset-env": "^7.18.2",
+    "babel-loader": "^8.2.5",
+    "core-js": "^3.22.7",
+    "core.js": "^0.4.2",
     "webpack-cli": "^4.9.2"
   }
 }
