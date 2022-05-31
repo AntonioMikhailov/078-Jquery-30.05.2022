@@ -37,27 +37,47 @@ button {
  </div>
  <button class="btn">Кнопка</button>
   <script>
-const btn = document.querySelector('.btn');
+
 // let timerId;
 
-function myAnimation() {
+// function myAnimation() {
   
-    const elem = document.querySelector('.box');
-    let pos = 0;
+//     const elem = document.querySelector('.box');
+//     let pos = 0;
 
-    const id = setInterval(frame, 10);  // 10 милисекунд
-       function frame() {
-        if (pos == 300) { // 300 конечная позиция Box - правый нижний угол
-           clearInterval(id); 
-        } else {
-            pos++;
-            elem.style.top = pos + 'px'; // При каждом шаге анимации сдвигаем сверху от Top
-        }   elem.style.left = pos + 'px'; // При каждом шаге анимации сдвигаем влево от края
-    }
+//     const id = setInterval(frame, 10);  // 10 милисекунд
+//        function frame() {
+//         if (pos == 300) { // 300 конечная позиция Box - правый нижний угол
+//            clearInterval(id); 
+//         } else {
+//             pos++;
+//             elem.style.top = pos + 'px'; // При каждом шаге анимации сдвигаем сверху от Top
+//         }   elem.style.left = pos + 'px'; // При каждом шаге анимации сдвигаем влево от края
+//     }
+// }
+// btn.addEventListener('click', myAnimation);
+
+
+// Вариант с  requestAnimationFrame
+const btn = document.querySelector('.btn');
+  const elem = document.querySelector('.box');
+  let pos = 0;
+
+function myAnimation() {
+  pos++;
+  elem.style.top = pos + 'px'; 
+  elem.style.left = pos + 'px'; 
+
+  if(pos <300) {
+requestAnimationFrame(myAnimation); //  передаем ф. анимации и зацикливаем анимцию
+  }
 }
-btn.addEventListener('click', myAnimation);
+btn.addEventListener('click', myAnimation); // и так запускается
+//или
+btn.addEventListener('click', () => requestAnimationFrame(myAnimation));
 
-
+let id = requestAnimationFrame(myAnimation);
+cancelAnimationFrame(id);
   </script>
 </body>
 </html>
